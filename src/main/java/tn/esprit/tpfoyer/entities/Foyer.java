@@ -2,6 +2,9 @@ package tn.esprit.tpfoyer.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -19,4 +22,10 @@ public class Foyer {
 
     @Column(name = "capaciteFoyer" )
     private long capaciteFoyer;
+
+    @OneToMany(mappedBy = "foyer")
+    private Set<Bloc> blocs;
+
+    @OneToOne(mappedBy = "foyer")
+    private Universite universite;
 }

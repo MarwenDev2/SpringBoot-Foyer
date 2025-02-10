@@ -3,12 +3,15 @@ package tn.esprit.tpfoyer.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Universite {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUniversitaire" )
@@ -18,4 +21,7 @@ public class Universite {
     private String nomUniversite;
 
     private String adresse;
+
+    @OneToOne
+    private Foyer foyer;
 }

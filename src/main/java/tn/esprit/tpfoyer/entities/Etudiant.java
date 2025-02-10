@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -20,7 +21,6 @@ public class Etudiant {
     @Column(name = "idEtudiant" )
     private long idEtudiant;
 
-    @Column(name = "nomE" )
     private String nomEt;
 
     @Column(name = "prenomE" )
@@ -32,4 +32,7 @@ public class Etudiant {
 
     @Column(name = "dateNaissance" )
     private Date dateNaissance;
+
+    @ManyToMany(mappedBy = "etudiants")
+    private Set<Reservation> reservations;
 }
