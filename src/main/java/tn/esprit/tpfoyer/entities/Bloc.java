@@ -20,9 +20,6 @@ public class Bloc {
     @Column(name = "nomBloc" )
     private String nomBloc;
 
-    @Column(name = "prenomEt" )
-    private String prenomEt;
-
     @Column(name = "capaciteBloc" )
     private long capaciteBloc;
 
